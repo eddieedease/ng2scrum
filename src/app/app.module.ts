@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { DragulaModule } from 'ng2-dragula';
+import { DragulaModule, DragulaService} from 'ng2-dragula';
 
 import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';

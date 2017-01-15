@@ -7,6 +7,7 @@
 # dependencies
 /node_modules
 
+
 # IDEs and editors
 /.idea
 .project
@@ -30,6 +31,7 @@
 npm-debug.log
 testem.log
 /typings
+/needs
 
 # e2e
 /e2e/*.js
