@@ -22,10 +22,10 @@ p {
 }
 
 .parallax-container {
-    min-height: 380px;
+    min-height: 550px;
     line-height: 0;
     height: auto;
-    color: white;
+    color: black;
 }
 
 .parallax img {
