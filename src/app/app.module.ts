@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { DragulaModule } from 'ng2-dragula';
+
 import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 
@@ -14,7 +16,8 @@ import { BoardComponent } from './board/board.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    DragulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
