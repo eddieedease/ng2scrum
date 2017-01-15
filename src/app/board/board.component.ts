@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
 
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -51,7 +52,17 @@ export class BoardComponent implements OnInit {
     // do something
   }
 
+
+  onLinkClick(event) {
+    console.log('clicked');
+    // open the modal
+  }
+
   ngOnInit() {
+    $(document).ready(function($) {
+      
+        console.log("Jquery loaded on board init"); 
+    });
   }
 
 }
