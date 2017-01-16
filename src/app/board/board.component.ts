@@ -14,6 +14,7 @@ import {
 // needed for jquery loading
 declare var $: any;
 
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -21,12 +22,12 @@ declare var $: any;
 })
 export class BoardComponent implements OnInit {
 
+  // declare vars
   selectedOption: string;
 
-
-
+  // inject the needed services
   constructor(private dragulaService: DragulaService, public dialog: MdDialog) {
-    // first have injected dragula & listen to their service
+    // set options for DragulaService
     dragulaService.setOptions('first-bag', {
       removeOnSpill: false
     });
@@ -72,22 +73,22 @@ export class BoardComponent implements OnInit {
 
 
   openDialog() {
-    let dialogRef = this.dialog.open(DialogResultExampleDialog);
+    let dialogRef = this.dialog.open(AppDialogResultExampleDialog);
     dialogRef.afterClosed().subscribe(result => {
       this.selectedOption = result;
     });
   }
 
 
-
+  //example of 
   onLinkClick(event) {
     console.log('clicked');
     // open the modal
   }
 
   ngOnInit() {
+    // Initialize jquery components
     $(document).ready(function ($) {
-      console.log('jquery says loaded');
       // Initialize collapse button
       $('.button-collapse').sideNav();
       // Initialize collapsible (uncomment the line below if you use the dropdown variation)
@@ -99,9 +100,9 @@ export class BoardComponent implements OnInit {
 
 
 @Component({
-  selector: 'dialog-result-example-dialog',
+  selector: 'app-dialog-result-example-dialog',
   template: '<div><h5>TODO: Modal form</h5><br><br><br><p>Jup</p></div>',
 })
-export class DialogResultExampleDialog {
-  constructor(public dialogRef: MdDialogRef < DialogResultExampleDialog > ) {}
+export class AppDialogResultExampleDialog {
+  constructor(public dialogRef: MdDialogRef < AppDialogResultExampleDialog > ) {}
 }

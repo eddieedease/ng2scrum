@@ -24,7 +24,7 @@ import {
 } from './app.component';
 import {
   BoardComponent,
-  DialogResultExampleDialog
+  AppDialogResultExampleDialog
 } from './board/board.component';
 
 
@@ -34,7 +34,7 @@ import 'hammerjs';
   declarations: [
     AppComponent,
     BoardComponent,
-    DialogResultExampleDialog
+    AppDialogResultExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,7 @@ import 'hammerjs';
     MaterialModule.forRoot(),
     DragulaModule
   ],
-  entryComponents: [DialogResultExampleDialog],
+  entryComponents: [AppDialogResultExampleDialog],
   providers: [],
   bootstrap: [AppComponent]
 })
