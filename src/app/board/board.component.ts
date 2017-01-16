@@ -1,6 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DragulaService
+} from 'ng2-dragula/ng2-dragula';
 
+import {
+  MdDialog,
+  MdDialogRef
+} from '@angular/material';
+
+// needed for jquery loading
+declare var $: any;
 
 @Component({
   selector: 'app-board',
@@ -9,10 +21,16 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
 })
 export class BoardComponent implements OnInit {
 
-  constructor(private dragulaService: DragulaService) {
+  selectedOption: string;
+
+
+
+  constructor(private dragulaService: DragulaService, public dialog: MdDialog) {
+    // first have injected dragula & listen to their service
     dragulaService.setOptions('first-bag', {
-      removeOnSpill: true
+      removeOnSpill: false
     });
+
 
     dragulaService.drag.subscribe((value) => {
       console.log(`drag: ${value[0]}`);
@@ -30,9 +48,9 @@ export class BoardComponent implements OnInit {
       console.log(`out: ${value[0]}`);
       this.onOut(value.slice(1));
     });
-   }
+  }
 
-   private onDrag(args) {
+  private onDrag(args) {
     let [e, el] = args;
     // do something
   }
@@ -53,16 +71,37 @@ export class BoardComponent implements OnInit {
   }
 
 
+  openDialog() {
+    let dialogRef = this.dialog.open(DialogResultExampleDialog);
+    dialogRef.afterClosed().subscribe(result => {
+      this.selectedOption = result;
+    });
+  }
+
+
+
   onLinkClick(event) {
     console.log('clicked');
     // open the modal
   }
 
   ngOnInit() {
-    $(document).ready(function($) {
-      
-        console.log("Jquery loaded on board init"); 
+    $(document).ready(function ($) {
+      console.log('jquery says loaded');
+      // Initialize collapse button
+      $('.button-collapse').sideNav();
+      // Initialize collapsible (uncomment the line below if you use the dropdown variation)
     });
   }
 
+}
+
+
+
+@Component({
+  selector: 'dialog-result-example-dialog',
+  template: '<div><h5>TODO: Modal form</h5><br><br><br><p>Jup</p></div>',
+})
+export class DialogResultExampleDialog {
+  constructor(public dialogRef: MdDialogRef < DialogResultExampleDialog > ) {}
 }

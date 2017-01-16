@@ -19,7 +19,7 @@
 
                 </div>
                 <div class="card-action">
-                    <a data-target="modal1" (click)="onLinkClick()">Link/Opties</a>
+                    <a (click)="openDialog()">Link/Opties</a>
                 </div>
             </div>
         </div>
@@ -34,6 +34,15 @@
                 <span class="black-text">
                 Moet nog
               </span>
+            </div>
+        </div>
+        <div class="card cyan lighten-5">
+            <div class="card-content black-text">
+                <span class="card-title">Andere titel Kaart</span>
+                <p>En nog een trotse tekst.</p>
+            </div>
+            <div class="card-action">
+                <a (click)="openDialog()">Link/Opties</a>
             </div>
         </div>
     </div>
@@ -55,9 +64,19 @@
                 <p>En nog een trotse tekst.</p>
             </div>
             <div class="card-action">
-                <a href="#">Link/Opties</a>
+                <a (click)="openDialog()">Link/Opties</a>
             </div>
         </div>
+        <div class="card cyan lighten-5">
+            <div class="card-content black-text">
+                <span class="card-title">Andere titel Kaart</span>
+                <p>En nog een trotse tekst.</p>
+            </div>
+            <div class="card-action">
+                <a (click)="openDialog()">Link/Opties</a>
+            </div>
+        </div>
+
     </div>
     <div [dragula]='"first-bag"' style="min-height: 500px;" class="col s12 m6 l3 purple lighten-2">
         <div class="row valign-wrapper white">
@@ -69,6 +88,15 @@
                 <span class="black-text">
                 Klaar
               </span>
+            </div>
+        </div>
+        <div class="card cyan lighten-5">
+            <div class="card-content black-text">
+                <span class="card-title">Andere titel Kaart</span>
+                <p>En nog een trotse tekst.</p>
+            </div>
+            <div class="card-action">
+                <a (click)="openDialog()">Link/Opties</a>
             </div>
         </div>
     </div>
