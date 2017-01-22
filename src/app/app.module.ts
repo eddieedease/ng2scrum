@@ -14,6 +14,7 @@ import {
   MaterialModule
 } from '@angular/material';
 
+
 import {
   DragulaModule,
   DragulaService
@@ -27,6 +28,10 @@ import {
   AppDialogResultExampleDialog
 } from './board/board.component';
 
+import {
+  WizardComponent, Hero
+} from './wizard/wizard.component';
+
 
 import 'hammerjs';
 
@@ -34,6 +39,7 @@ import 'hammerjs';
   declarations: [
     AppComponent,
     BoardComponent,
+    WizardComponent,
     AppDialogResultExampleDialog
   ],
   imports: [
