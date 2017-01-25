@@ -41,6 +41,7 @@ import {
 // import hammerjs
 import 'hammerjs';
 
+
 @NgModule({
   declarations: [
     AppComponent,
