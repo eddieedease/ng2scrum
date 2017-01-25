@@ -13,13 +13,15 @@ import {
 import {
   MaterialModule
 } from '@angular/material';
-
-
+import {
+  CalendarModule
+} from 'angular-calendar';
 import {
   DragulaModule,
   DragulaService
 } from 'ng2-dragula';
 
+// OWN components
 import {
   AppComponent
 } from './app.component';
@@ -27,12 +29,16 @@ import {
   BoardComponent,
   AppDialogResultExampleDialog
 } from './board/board.component';
-
 import {
-  WizardComponent, Hero
+  WizardComponent,
+  Hero
 } from './wizard/wizard.component';
+import {
+  CalendarComponent
+} from './calendar/calendar.component';
 
 
+// import hammerjs
 import 'hammerjs';
 
 @NgModule({
@@ -40,6 +46,7 @@ import 'hammerjs';
     AppComponent,
     BoardComponent,
     WizardComponent,
+    CalendarComponent,
     AppDialogResultExampleDialog
   ],
   imports: [
@@ -47,6 +54,7 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
+    CalendarModule.forRoot(),
     DragulaModule
   ],
   entryComponents: [AppDialogResultExampleDialog],
