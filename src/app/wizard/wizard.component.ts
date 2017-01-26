@@ -15,13 +15,13 @@ export class WizardComponent implements OnInit {
   // trying to load some XML
   file: File;
   myReader: FileReader;
-  xmlstring;
-
-
 
   parser;
+  xmlstring;
   xmlDoc;
+  jsonDoc;
 
+  obj: Object;
 
   powers = ['oioi', 'Super Flexible',
     'Super Hot', 'Weather Changer'
@@ -41,8 +41,7 @@ export class WizardComponent implements OnInit {
   }
 
 
-  // NOTE 2DO in the parseXML, check if something comes out
-  // NOTE important HTML5 browser needed
+  // Handling the XML File --> 
   handleXMLChange($event) {
     console.log('Attempting to load XML');
     this.parseXML($event.target);
@@ -51,28 +50,20 @@ export class WizardComponent implements OnInit {
   parseXML(inputValue: any): void {
     this.file = inputValue.files[0];
     this.myReader = new FileReader();
-
     // this starts the loading
     this.myReader.readAsText(this.file);
     // when loaded call
-    // note the arrow function
+    // note the arrow function for non window scope, So can acces comp scope
     this.myReader.onloadend = (e) => {
       this.xmlstring = this.myReader.result;
       // the xml file => console.log(this.myReader.result);
-      console.log('XML Loaded succesfully');
-
-      this.parser = new DOMParser();
-      this.xmlDoc = this.parser.parseFromString(this.xmlstring, "text/xml");
-
-      // here we have a dom representation of the xml
-      console.log(this.xmlDoc);
-      
-
+      console.log(this.xmlstring);
+      let x2js = new X2JS();
+      this.jsonDoc = x2js.xml_str2json(this.xmlstring);
+      // console log result
+      console.log(this.jsonDoc);
     };
-
-  }
-
-
+  };
 
 
   clicked() {
